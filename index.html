@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Youtube Clone</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <!-- This file render the elements--> 
+        <link rel="stylesheet" href="./CSS/Normalize.css">
+        <link rel="stylesheet" href="CSS/all.min.css" type="text/css"/>
+        <!-- Main css file --> 
+        <link rel="stylesheet" href="./CSS/MainFile.css">
+        <!-- Material Icons -->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+        <!-- Google Fonts --> 
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+      
+
+    </head> 
+    <body>  
+        <div id="overlay" class="overlay"></div>
+        <!-- Start header -->  
+        <div class="header">
+            <div class="container">
+                <div class="logo left">
+                    <i id="menu" class="material-icons">menu</i>
+                    <img src="https://www.freecodecamp.org/news/content/images/2022/01/yt-logo.png">
+                </div>
+                <div class="search center">
+
+                    <form action="">
+                        <i id="rightarrow" class="fa fa-arrow-right" aria-hidden="true"></i>
+                        <input id="inputfield" type="text" placeholder="Search" />
+                        <svg id="searchicon1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                             width="24" height="24"
+                             viewBox="0 0 172 172"
+                             style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#646464"><path d="M64.5,14.33333c-27.6214,0 -50.16667,22.54527 -50.16667,50.16667c0,27.6214 22.54527,50.16667 50.16667,50.16667c12.52732,0 23.97256,-4.67249 32.7819,-12.31771l3.05143,3.05143v9.26628l43,43l14.33333,-14.33333l-43,-43h-9.26628l-3.05143,-3.05143c7.64521,-8.80934 12.31771,-20.25458 12.31771,-32.7819c0,-27.6214 -22.54527,-50.16667 -50.16667,-50.16667zM64.5,28.66667c19.87509,0 35.83333,15.95824 35.83333,35.83333c0,19.87509 -15.95825,35.83333 -35.83333,35.83333c-19.87509,0 -35.83333,-15.95825 -35.83333,-35.83333c0,-19.87509 15.95824,-35.83333 35.83333,-35.83333z"></path></g></g></svg>
+
+
+                        <svg id="searchicon2" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                             width="24" height="24"
+                             viewBox="0 0 172 172"
+                             style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#646464"><path d="M64.5,14.33333c-27.6214,0 -50.16667,22.54527 -50.16667,50.16667c0,27.6214 22.54527,50.16667 50.16667,50.16667c12.52732,0 23.97256,-4.67249 32.7819,-12.31771l3.05143,3.05143v9.26628l43,43l14.33333,-14.33333l-43,-43h-9.26628l-3.05143,-3.05143c7.64521,-8.80934 12.31771,-20.25458 12.31771,-32.7819c0,-27.6214 -22.54527,-50.16667 -50.16667,-50.16667zM64.5,28.66667c19.87509,0 35.83333,15.95824 35.83333,35.83333c0,19.87509 -15.95825,35.83333 -35.83333,35.83333c-19.87509,0 -35.83333,-15.95825 -35.83333,-35.83333c0,-19.87509 15.95824,-35.83333 35.83333,-35.83333z"></path></g></g></svg>
+                    </form>  
+                   <i id="mic" class="material-icons">mic</i>
+                </div>
+                <div id="iconsright" class="icons right">
+                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                         width="24" height="24"
+                         viewBox="0 0 172 172"
+                         style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#646464"><path d="M21.5,35.83333c-7.83362,0 -14.33333,6.49972 -14.33333,14.33333v71.66667c0,7.83362 6.49972,14.33333 14.33333,14.33333h93.16667c7.83362,0 14.33333,-6.49972 14.33333,-14.33333v-20.92611l35.83333,28.66667v-87.14779l-35.83333,28.66667v-20.92611c0,-7.83362 -6.49972,-14.33333 -14.33333,-14.33333zM21.5,50.16667h93.16667v71.66667h-93.16667zM150.5,72.25456v27.49089l-17.18881,-13.74544z"></path></g></g></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                         width="24" height="24"
+                         viewBox="0 0 172 172"
+                         style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#000000"><path d="M34.4,13.76c-11.35841,0 -20.64,9.28159 -20.64,20.64c0,11.35841 9.28159,20.64 20.64,20.64c11.35841,0 20.64,-9.28159 20.64,-20.64c0,-11.35841 -9.28159,-20.64 -20.64,-20.64zM86,13.76c-11.35841,0 -20.64,9.28159 -20.64,20.64c0,11.35841 9.28159,20.64 20.64,20.64c11.35841,0 20.64,-9.28159 20.64,-20.64c0,-11.35841 -9.28159,-20.64 -20.64,-20.64zM137.6,13.76c-11.35841,0 -20.64,9.28159 -20.64,20.64c0,11.35841 9.28159,20.64 20.64,20.64c11.35841,0 20.64,-9.28159 20.64,-20.64c0,-11.35841 -9.28159,-20.64 -20.64,-20.64zM34.4,20.64c7.64018,0 13.76,6.11982 13.76,13.76c0,7.64018 -6.11982,13.76 -13.76,13.76c-7.64018,0 -13.76,-6.11982 -13.76,-13.76c0,-7.64018 6.11982,-13.76 13.76,-13.76zM86,20.64c7.64018,0 13.76,6.11982 13.76,13.76c0,7.64018 -6.11982,13.76 -13.76,13.76c-7.64018,0 -13.76,-6.11982 -13.76,-13.76c0,-7.64018 6.11982,-13.76 13.76,-13.76zM137.6,20.64c7.64018,0 13.76,6.11982 13.76,13.76c0,7.64018 -6.11982,13.76 -13.76,13.76c-7.64018,0 -13.76,-6.11982 -13.76,-13.76c0,-7.64018 6.11982,-13.76 13.76,-13.76zM34.4,65.36c-11.35841,0 -20.64,9.28159 -20.64,20.64c0,11.35841 9.28159,20.64 20.64,20.64c11.35841,0 20.64,-9.28159 20.64,-20.64c0,-11.35841 -9.28159,-20.64 -20.64,-20.64zM86,65.36c-11.35841,0 -20.64,9.28159 -20.64,20.64c0,11.35841 9.28159,20.64 20.64,20.64c11.35841,0 20.64,-9.28159 20.64,-20.64c0,-11.35841 -9.28159,-20.64 -20.64,-20.64zM137.6,65.36c-11.35841,0 -20.64,9.28159 -20.64,20.64c0,11.35841 9.28159,20.64 20.64,20.64c11.35841,0 20.64,-9.28159 20.64,-20.64c0,-11.35841 -9.28159,-20.64 -20.64,-20.64zM34.4,72.24c7.64018,0 13.76,6.11982 13.76,13.76c0,7.64018 -6.11982,13.76 -13.76,13.76c-7.64018,0 -13.76,-6.11982 -13.76,-13.76c0,-7.64018 6.11982,-13.76 13.76,-13.76zM86,72.24c7.64018,0 13.76,6.11982 13.76,13.76c0,7.64018 -6.11982,13.76 -13.76,13.76c-7.64018,0 -13.76,-6.11982 -13.76,-13.76c0,-7.64018 6.11982,-13.76 13.76,-13.76zM137.6,72.24c7.64018,0 13.76,6.11982 13.76,13.76c0,7.64018 -6.11982,13.76 -13.76,13.76c-7.64018,0 -13.76,-6.11982 -13.76,-13.76c0,-7.64018 6.11982,-13.76 13.76,-13.76zM34.4,116.96c-11.35841,0 -20.64,9.28159 -20.64,20.64c0,11.35841 9.28159,20.64 20.64,20.64c11.35841,0 20.64,-9.28159 20.64,-20.64c0,-11.35841 -9.28159,-20.64 -20.64,-20.64zM86,116.96c-11.35841,0 -20.64,9.28159 -20.64,20.64c0,11.35841 9.28159,20.64 20.64,20.64c11.35841,0 20.64,-9.28159 20.64,-20.64c0,-11.35841 -9.28159,-20.64 -20.64,-20.64zM137.6,116.96c-11.35841,0 -20.64,9.28159 -20.64,20.64c0,11.35841 9.28159,20.64 20.64,20.64c11.35841,0 20.64,-9.28159 20.64,-20.64c0,-11.35841 -9.28159,-20.64 -20.64,-20.64zM34.4,123.84c7.64018,0 13.76,6.11982 13.76,13.76c0,7.64018 -6.11982,13.76 -13.76,13.76c-7.64018,0 -13.76,-6.11982 -13.76,-13.76c0,-7.64018 6.11982,-13.76 13.76,-13.76zM86,123.84c7.64018,0 13.76,6.11982 13.76,13.76c0,7.64018 -6.11982,13.76 -13.76,13.76c-7.64018,0 -13.76,-6.11982 -13.76,-13.76c0,-7.64018 6.11982,-13.76 13.76,-13.76zM137.6,123.84c7.64018,0 13.76,6.11982 13.76,13.76c0,7.64018 -6.11982,13.76 -13.76,13.76c-7.64018,0 -13.76,-6.11982 -13.76,-13.76c0,-7.64018 6.11982,-13.76 13.76,-13.76z"></path></g></g></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                         width="24" height="24"
+                         viewBox="0 0 172 172"
+                         style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#646464"><path d="M86,14.33333c-5.934,0 -10.75,4.816 -10.75,10.75v4.98307c-18.53885,4.77861 -32.25,21.56799 -32.25,41.60026v43l-14.33333,14.33333v7.16667h44.93164c-1.26198,2.17784 -1.92819,4.64961 -1.93164,7.16667c0,7.91608 6.41725,14.33333 14.33333,14.33333c7.91608,0 14.33333,-6.41725 14.33333,-14.33333c-0.0077,-2.51833 -0.67877,-4.99018 -1.94564,-7.16667h44.94564v-7.16667l-14.33333,-14.33333v-43c0,-20.03227 -13.71115,-36.82165 -32.25,-41.60026v-4.98307c0,-5.934 -4.816,-10.75 -10.75,-10.75zM86,43c15.80967,0 28.66667,12.857 28.66667,28.66667v43v5.9349l1.23177,1.23177h-59.79687l1.23177,-1.23177v-5.9349v-43c0,-15.80967 12.857,-28.66667 28.66667,-28.66667z"></path></g></g></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                         width="24" height="24"
+                         viewBox="0 0 172 172"
+                         style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#646464"><path d="M86,14.33333c-39.5815,0 -71.66667,32.08517 -71.66667,71.66667c0,39.5815 32.08517,71.66667 71.66667,71.66667c39.5815,0 71.66667,-32.08517 71.66667,-71.66667c0,-39.5815 -32.08517,-71.66667 -71.66667,-71.66667zM86,28.66667c31.66233,0 57.33333,25.671 57.33333,57.33333c0,11.44726 -3.40127,22.08127 -9.18229,31.03223l-5.51497,-4.2692c-11.12267,-8.5785 -31.6209,-12.42969 -42.63607,-12.42969c-11.01517,0 -31.52057,3.85119 -42.63607,12.42969l-5.51497,4.2832c-5.78498,-8.95301 -9.18229,-19.59469 -9.18229,-31.04622c0,-31.66233 25.671,-57.33333 57.33333,-57.33333zM86,41.20833c-12.84267,0 -23.29167,10.449 -23.29167,23.29167c0,12.84267 10.449,23.29167 23.29167,23.29167c12.84267,0 23.29167,-10.449 23.29167,-23.29167c0,-12.84267 -10.449,-23.29167 -23.29167,-23.29167zM86,55.54167c4.93783,0 8.95833,4.0205 8.95833,8.95833c0,4.93783 -4.0205,8.95833 -8.95833,8.95833c-4.93783,0 -8.95833,-4.0205 -8.95833,-8.95833c0,-4.93783 4.0205,-8.95833 8.95833,-8.95833zM86,114.66667c22.22178,0 34.17135,8.37409 39.7666,12.56966c-10.31172,9.94682 -24.30916,16.09701 -39.7666,16.09701c-15.45744,0 -29.45488,-6.15019 -39.7666,-16.09701c5.59525,-4.19557 17.54482,-12.56966 39.7666,-12.56966zM43.39193,124.26888c0.86694,0.95522 1.73852,1.90638 2.6595,2.79948c-0.92211,-0.89714 -1.79922,-1.84246 -2.6595,-2.79948zM128.37011,124.52083c-0.786,0.86389 -1.57074,1.73308 -2.40755,2.54753c0.83455,-0.80946 1.61454,-1.68769 2.40755,-2.54753z"></path></g></g></svg>
+                </div> 
+            </div>
+            <hr id="hr">
+        </div>
+        <!-- End header -->  
+        <main> 
+            <aside id="aside"> 
+                <nav id="nav2">
+                    <a class="nav-link active">
+                        <i class="material-icons">home</i>
+                        <span class="special">Home</span>
+                    </a> 
+                    <a class="nav-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                             width="24" height="24"
+                             viewBox="0 0 172 172"
+                             style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#646464"><path d="M86,14.33333c-39.5815,0 -71.66667,32.08517 -71.66667,71.66667c0,39.5815 32.08517,71.66667 71.66667,71.66667c39.5815,0 71.66667,-32.08517 71.66667,-71.66667c0,-39.5815 -32.08517,-71.66667 -71.66667,-71.66667zM86,28.66667c31.66233,0 57.33333,25.671 57.33333,57.33333c0,31.66233 -25.671,57.33333 -57.33333,57.33333c-31.66233,0 -57.33333,-25.671 -57.33333,-57.33333c0,-31.66233 25.671,-57.33333 57.33333,-57.33333zM121.83333,50.16667l-48.9069,22.75976l-22.75976,48.9069l48.9069,-22.75976zM86,78.11947c4.37167,0 7.88053,3.50886 7.88053,7.88053c0,4.37167 -3.50886,7.88053 -7.88053,7.88053c-4.37167,0 -7.88053,-3.50886 -7.88053,-7.88053c0,-4.37167 3.50886,-7.88053 7.88053,-7.88053z"></path></g></g></svg>
+                        <span class="special">Trending</span>
+                    </a> 
+                    <a class="nav-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                             width="24" height="24"
+                             viewBox="0 0 172 172"
+                             style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#646464"><path d="M50.16667,21.5c-7.91917,0 -14.33333,6.41417 -14.33333,14.33333h100.33333c0,-7.91917 -6.41417,-14.33333 -14.33333,-14.33333zM28.66667,50.16667c-7.91917,0 -14.33333,6.41417 -14.33333,14.33333v71.66667c0,7.91917 6.41417,14.33333 14.33333,14.33333h114.66667c7.91917,0 14.33333,-6.41417 14.33333,-14.33333v-71.66667c0,-7.91917 -6.41417,-14.33333 -14.33333,-14.33333zM28.66667,64.5h114.66667v71.66667h-114.66667zM71.66667,78.83333v43l35.83333,-21.5z"></path></g></g></svg>
+                        <span>Subscriptions</span>
+                    </a> 
+                    <a class="nav-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                             width="24" height="24"
+                             viewBox="0 0 172 172"
+                             style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#646464"><path d="M21.5,21.5c-7.83362,0 -14.33333,6.49972 -14.33333,14.33333v71.66667c0,7.83362 6.49972,14.33333 14.33333,14.33333h93.16667c7.83362,0 14.33333,-6.49972 14.33333,-14.33333v-71.66667c0,-7.83362 -6.49972,-14.33333 -14.33333,-14.33333zM21.5,35.83333h93.16667v71.66667h-93.16667zM50.16667,50.16667v43l35.83333,-21.5zM143.33333,50.16667v86h-107.5v14.33333h107.5c7.83362,0 14.33333,-6.49972 14.33333,-14.33333v-86z"></path></g></g></svg>
+                        <span class="special">Library</span>
+                    </a> 
+                </nav>
+                <nav id="nav1">
+                    <a class="nav-link active">
+                        <i class="material-icons">home</i>
+                        <span>Home</span>
+                    </a> 
+                    <a class="nav-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                             width="24" height="24"
+                             viewBox="0 0 172 172"
+                             style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#646464"><path d="M86,14.33333c-39.5815,0 -71.66667,32.08517 -71.66667,71.66667c0,39.5815 32.08517,71.66667 71.66667,71.66667c39.5815,0 71.66667,-32.08517 71.66667,-71.66667c0,-39.5815 -32.08517,-71.66667 -71.66667,-71.66667zM86,28.66667c31.66233,0 57.33333,25.671 57.33333,57.33333c0,31.66233 -25.671,57.33333 -57.33333,57.33333c-31.66233,0 -57.33333,-25.671 -57.33333,-57.33333c0,-31.66233 25.671,-57.33333 57.33333,-57.33333zM121.83333,50.16667l-48.9069,22.75976l-22.75976,48.9069l48.9069,-22.75976zM86,78.11947c4.37167,0 7.88053,3.50886 7.88053,7.88053c0,4.37167 -3.50886,7.88053 -7.88053,7.88053c-4.37167,0 -7.88053,-3.50886 -7.88053,-7.88053c0,-4.37167 3.50886,-7.88053 7.88053,-7.88053z"></path></g></g></svg>
+                        <span>Trending</span>
+                    </a>
+                    <a class="nav-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                             width="24" height="24"
+                             viewBox="0 0 172 172"
+                             style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#646464"><path d="M50.16667,21.5c-7.91917,0 -14.33333,6.41417 -14.33333,14.33333h100.33333c0,-7.91917 -6.41417,-14.33333 -14.33333,-14.33333zM28.66667,50.16667c-7.91917,0 -14.33333,6.41417 -14.33333,14.33333v71.66667c0,7.91917 6.41417,14.33333 14.33333,14.33333h114.66667c7.91917,0 14.33333,-6.41417 14.33333,-14.33333v-71.66667c0,-7.91917 -6.41417,-14.33333 -14.33333,-14.33333zM28.66667,64.5h114.66667v71.66667h-114.66667zM71.66667,78.83333v43l35.83333,-21.5z"></path></g></g></svg>
+                        <span>Subscriptions</span>
+                    </a> 
+                    <hr class="non"> 
+                    <a class="nav-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                             width="24" height="24"
+                             viewBox="0 0 172 172"
+                             style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#646464"><path d="M21.5,21.5c-7.83362,0 -14.33333,6.49972 -14.33333,14.33333v71.66667c0,7.83362 6.49972,14.33333 14.33333,14.33333h93.16667c7.83362,0 14.33333,-6.49972 14.33333,-14.33333v-71.66667c0,-7.83362 -6.49972,-14.33333 -14.33333,-14.33333zM21.5,35.83333h93.16667v71.66667h-93.16667zM50.16667,50.16667v43l35.83333,-21.5zM143.33333,50.16667v86h-107.5v14.33333h107.5c7.83362,0 14.33333,-6.49972 14.33333,-14.33333v-86z"></path></g></g></svg>
+                        <span>Library</span>
+                    </a>  
+                    <span class="other">
+                        <a class="nav-link">
+                            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                                 width="24" height="24"
+                                 viewBox="0 0 172 172"
+                                 style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#646464"><path d="M86,14.33333c-21.58333,0 -40.82334,9.71562 -53.95996,24.87337l-17.70671,-17.70671v43h43l-15.21517,-15.21517c10.52135,-12.5589 26.24904,-20.61816 43.88184,-20.61816c31.61217,0 57.33333,25.72117 57.33333,57.33333c0,31.61217 -25.72117,57.33333 -57.33333,57.33333c-31.61217,0 -57.33333,-25.72117 -57.33333,-57.33333h-14.33333c0,39.517 32.14967,71.66667 71.66667,71.66667c39.517,0 71.66667,-32.14967 71.66667,-71.66667c0,-39.517 -32.14967,-71.66667 -71.66667,-71.66667zM78.83333,43v45.96744l23.59961,23.59961l10.13411,-10.13411l-19.40039,-19.40039v-40.03256z"></path></g></g></svg>
+                            <span>History</span>
+                        </a>
+                        <a class="nav-link">
+                            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                                 width="24" height="24"
+                                 viewBox="0 0 172 172"
+                                 style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#646464"><path d="M28.66667,21.5c-7.83362,0 -14.33333,6.49972 -14.33333,14.33333v100.33333c0,7.83362 6.49972,14.33333 14.33333,14.33333h114.66667c7.83362,0 14.33333,-6.49972 14.33333,-14.33333v-100.33333c0,-7.83362 -6.49972,-14.33333 -14.33333,-14.33333zM28.66667,35.83333h114.66667v100.33333h-114.66667zM64.5,57.33333v57.33333l50.16667,-28.66667z"></path></g></g></svg>
+                            <span>Your Videos</span>
+                        </a>
+                        <a class="nav-link">
+                            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                                 width="24" height="24"
+                                 viewBox="0 0 172 172"
+                                 style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#646464"><path d="M86,14.33333c-39.49552,0 -71.66667,32.17115 -71.66667,71.66667c0,39.49552 32.17115,71.66667 71.66667,71.66667c39.49552,0 71.66667,-32.17115 71.66667,-71.66667c0,-39.49552 -32.17115,-71.66667 -71.66667,-71.66667zM86,28.66667c31.74921,0 57.33333,25.58412 57.33333,57.33333c0,31.74921 -25.58412,57.33333 -57.33333,57.33333c-31.74921,0 -57.33333,-25.58412 -57.33333,-57.33333c0,-31.74921 25.58412,-57.33333 57.33333,-57.33333zM78.83333,43v45.96744l30.76628,30.76628l10.13411,-10.13411l-26.56706,-26.56706v-40.03256z"></path></g></g></svg>
+                            <span>watch_later</span>
+                        </a>
+                        <a class="nav-link">
+                            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                                 width="24" height="24"
+                                 viewBox="0 0 172 172"
+                                 style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#646464"><path d="M101.53711,7.16667l-47.18522,47.26921c-2.66706,2.6742 -4.1704,6.29316 -4.18522,10.06413h-43v86h43c2.62338,0 5.05207,-0.75831 7.16667,-1.98763c2.1146,1.22932 4.54328,1.98763 7.16667,1.98763h64.44401c5.72616,0 10.90688,-3.41089 13.17155,-8.67839l21.55599,-50.18066c0.76683,-1.7845 1.16178,-3.71278 1.16178,-5.65494v-14.31934c0,-7.91917 -6.41417,-14.33333 -14.33333,-14.33333h-45.51953l6.71875,-30.79427c1.04633,-4.80883 -0.4496,-9.80837 -3.96127,-13.25553zM95.50423,33.49577l-4.52116,20.78613l-3.77929,17.38477h17.79069h45.50553v14.31934l-21.55599,50.18066h-64.44401v-57.33333v-14.27734zM21.5,78.83333h28.66667v57.33333h-28.66667z"></path></g></g></svg>
+                            <span>Liked Videos</span> 
+                        </a>  
+                        <a class="nav-link">
+                            <i class="material-icons">playlist_play   </i>
+                            <span>Java script</span>
+                        </a>
+                        <a class="nav-link">
+                            <i class="material-icons">playlist_play</i>
+                            <span>Html</span>
+                        </a> 
+                        <a class="nav-link">
+                            <i class="material-icons">playlist_play</i>
+                            <span>CSS</span>
+                        </a> 
+                        <a class="nav-link">
+                            <i class="material-icons">playlist_play   </i>
+                            <span>PHP</span>
+                        </a>
+                        <a class="nav-link">
+                            <i class="material-icons">keyboard_arrow_up</i>
+                            <span>Show less</span> 
+                        </a>
+                        <hr> 
+                        <span class="Subscriptions">Subscriptions</span> 
+                        <div class="subscribe-content">
+                            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=388&q=80" alt=""> 
+                            <span class="channel-name">Sarah's Diary</span>  
+                            <div class="notification"></div>
+                        </div>
+                        <div class="subscribe-content">
+                            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=388&q=80" alt=""> 
+                            <span class="channel-name">Sarah's Diary</span>        
+                        </div> 
+                        <div class="subscribe-content">
+                            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=388&q=80" alt=""> 
+                            <span class="channel-name">Sarah's Diary</span> 
+                            <div class="notification"></div>
+                        </div> 
+                        <div class="subscribe-content">
+                            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=388&q=80" alt=""> 
+                            <span class="channel-name">Sarah's Diary</span>        
+                        </div> 
+                        <a class="nav-link">
+                            <i class="material-icons">keyboard_arrow_up</i>
+                            <span>Show less</span> 
+                        </a>
+                        <hr> 
+                        <span class="more">More from <span>Youtube</span> </span>
+                        <a id="icons" class="nav-link">
+                            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                                 width="24" height="24"
+                                 viewBox="0 0 172 172"
+                                 style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#646464"><path d="M86,28.66667c0,0 -44.82358,-0.00022 -56.00358,2.99544c-6.1705,1.64833 -11.01931,6.50431 -12.66764,12.66764c-2.99567,11.18 -2.99544,41.67025 -2.99544,41.67025c0,0 -0.00022,30.49025 2.99544,41.67025c1.64833,6.1705 6.50431,11.01931 12.66764,12.66764c11.18,2.99567 56.00358,2.99544 56.00358,2.99544c0,0 44.82358,0.00022 56.00358,-2.99544c6.16333,-1.64833 11.01931,-6.50431 12.66764,-12.66764c2.99567,-11.18 2.99544,-41.67025 2.99544,-41.67025c0,0 0.00022,-30.49025 -2.99544,-41.67025c-1.64833,-6.16333 -6.50431,-11.01931 -12.66764,-12.66764c-11.18,-2.99567 -56.00358,-2.99544 -56.00358,-2.99544zM86,43c20.65433,0 46.51794,0.95753 52.29427,2.50553c1.21117,0.3225 2.20386,1.3152 2.53353,2.53353c1.72717,6.43567 2.50553,26.0786 2.50553,37.96094c0,11.88233 -0.77836,31.5181 -2.50553,37.96094c-0.3225,1.21117 -1.3152,2.20386 -2.53353,2.53353c-5.76917,1.548 -31.63994,2.50553 -52.29427,2.50553c-20.64717,0 -46.51077,-0.95753 -52.29427,-2.50553c-1.21117,-0.3225 -2.20386,-1.3152 -2.53353,-2.53353c-1.72717,-6.43567 -2.50553,-26.0786 -2.50553,-37.96094c0,-11.88233 0.77837,-31.52493 2.50553,-37.97493c0.3225,-1.204 1.3152,-2.19703 2.53353,-2.51953c5.76917,-1.548 31.63994,-2.50553 52.29427,-2.50553zM71.66667,61.16862v49.66276l43,-24.83138z"></path></g></g></svg>
+                            <span>Youtubepremium</span> 
+                        </a> 
+                        <a id="icons" class="nav-link">
+                            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                                 width="24" height="24"
+                                 viewBox="0 0 172 172"
+                                 style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#646464"><path d="M21.5,35.83333c0,0 -14.33333,43 -14.33333,64.5c0,19.78717 16.04617,35.83333 35.83333,35.83333h86c19.78717,0 35.83333,-16.04617 35.83333,-35.83333c0,-21.5 -14.33333,-64.5 -14.33333,-64.5zM32.02604,50.16667h107.96191c4.429,14.7705 10.51205,37.78267 10.51205,50.16667c0,11.85367 -9.64633,21.5 -21.5,21.5h-86c-11.85367,0 -21.5,-9.64633 -21.5,-21.5c0,-12.35533 6.08987,-35.389 10.52604,-50.16667zM50.16667,64.5v14.33333h-14.33333v14.33333h14.33333v14.33333h14.33333v-14.33333h14.33333v-14.33333h-14.33333v-14.33333zM114.66667,64.5c-3.95804,0 -7.16667,3.20863 -7.16667,7.16667c0,3.95804 3.20863,7.16667 7.16667,7.16667c3.95804,0 7.16667,-3.20863 7.16667,-7.16667c0,-3.95804 -3.20863,-7.16667 -7.16667,-7.16667zM129,93.16667c-3.95804,0 -7.16667,3.20863 -7.16667,7.16667c0,3.95804 3.20863,7.16667 7.16667,7.16667c3.95804,0 7.16667,-3.20863 7.16667,-7.16667c0,-3.95804 -3.20863,-7.16667 -7.16667,-7.16667z"></path></g></g></svg>
+                            <span>video Games</span> 
+                        </a> 
+                        <a id="icons" class="nav-link">
+                            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                                 width="24" height="24"
+                                 viewBox="0 0 172 172"
+                                 style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#646464"><path d="M30.27637,30.27637c-14.26883,14.276 -23.1097,33.98713 -23.1097,55.72363c0,21.7365 8.84087,41.44764 23.1097,55.72364l10.13411,-10.13412c-11.68167,-11.68167 -18.91048,-27.80902 -18.91048,-45.58952c0,-17.7805 7.22882,-33.90785 18.91048,-45.58952zM141.72364,30.27637l-10.13412,10.13411c11.68167,11.68167 18.91048,27.80902 18.91048,45.58952c0,17.7805 -7.22882,33.90785 -18.91048,45.58952l10.13412,10.13412c14.26883,-14.276 23.1097,-33.98714 23.1097,-55.72364c0,-21.7365 -8.84086,-41.44763 -23.1097,-55.72363zM50.5446,50.5446c-9.08733,9.08017 -14.71126,21.62374 -14.71126,35.4554c0,13.83167 5.62393,26.37524 14.71126,35.45541l10.13411,-10.13412c-6.493,-6.48583 -10.51204,-15.44562 -10.51204,-25.32129c0,-9.87567 4.02621,-18.82829 10.51204,-25.32129zM121.45541,50.5446l-10.13412,10.13411c6.493,6.48583 10.51205,15.44562 10.51205,25.32129c0,9.87567 -4.02621,18.82829 -10.51205,25.32129l10.13412,10.13412c9.08017,-9.08733 14.71126,-21.62374 14.71126,-35.45541c0,-13.83167 -5.62393,-26.37524 -14.71126,-35.4554zM86,64.5c-11.87412,0 -21.5,9.62588 -21.5,21.5c0,11.87412 9.62588,21.5 21.5,21.5c11.87412,0 21.5,-9.62588 21.5,-21.5c0,-11.87412 -9.62588,-21.5 -21.5,-21.5z"></path></g></g></svg>
+                            <span>Live</span> 
+                        </a> 
+                        <a  id="icons" class="nav-link">
+                            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                                 width="24" height="24"
+                                 viewBox="0 0 172 172"
+                                 style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#646464"><path d="M14.33333,21.5v7.16667c0,19.82778 8.16658,34.12779 15.53711,45.1836c7.37053,11.05579 13.12956,18.91825 13.12956,26.48307h14.33333c0,-0.11588 -0.02681,-0.22059 -0.02799,-0.33594c7.01248,15.86009 14.36133,21.83594 14.36133,21.83594h28.66667c0,0 7.34884,-5.97585 14.36133,-21.83594c-0.00118,0.11535 -0.02799,0.22006 -0.02799,0.33594h14.33333c0,-7.56482 5.75903,-15.42728 13.12956,-26.48307c7.37053,-11.0558 15.53711,-25.35582 15.53711,-45.1836v-7.16667zM30.03841,35.83333h14.92122c0.45756,17.25784 2.47479,31.3917 5.26302,42.81803c-2.66054,-4.35606 -5.62383,-8.54772 -8.42643,-12.75162c-5.75745,-8.63617 -10.12538,-18.20572 -11.75781,-30.06641zM59.50293,35.83333h52.99414v7.16667h-0.028c-2.24317,38.68567 -13.26057,57.62717 -18.42057,64.5h-16.05502c-5.30333,-7.052 -16.23373,-26.00783 -18.46256,-64.5h-0.02799zM127.04036,35.83333h14.92123c-1.63243,11.86069 -6.00036,21.43023 -11.75781,30.06641c-2.80261,4.20391 -5.7659,8.39557 -8.42643,12.75162c2.78823,-11.42633 4.80546,-25.56019 5.26301,-42.81803zM50.16667,136.16667v14.33333h71.66667v-14.33333z"></path></g></g></svg>
+                            <span>Sport</span> 
+                        </a> 
+                        <hr>
+                        <a id="icons2" class="nav-link">
+                            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                                 width="24" height="24"
+                                 viewBox="0 0 172 172"
+                                 style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#646464"><path d="M69.27311,14.33333l-3.51335,18.08464c-5.90653,2.22752 -11.33046,5.34987 -16.08301,9.25228l-17.37077,-5.99089l-16.74089,28.97461l13.91341,12.09375c-0.53487,3.28395 -0.81185,6.32717 -0.81185,9.25228c0,2.9295 0.28528,5.96715 0.81185,9.25228v0.014l-13.91341,12.09375l16.74089,28.96061l17.35677,-5.97689c4.75299,3.90454 10.18919,7.00948 16.097,9.23828l3.51335,18.08464h33.45377l3.51335,-18.08464c5.91039,-2.22897 11.32824,-5.34628 16.083,-9.25227l17.37077,5.99088l16.72689,-28.96061l-13.89941,-12.10775c0.53486,-3.28395 0.81185,-6.32717 0.81185,-9.25228c0,-2.92072 -0.27857,-5.95999 -0.81185,-9.23828v-0.014l13.91341,-12.10775l-16.74088,-28.96061l-17.35678,5.97689c-4.75298,-3.90453 -10.18919,-7.00948 -16.097,-9.23828l-3.51335,-18.08464zM81.08691,28.66667h9.82617l2.78548,14.33333l7.47461,2.82747c4.50543,1.69806 8.5533,4.02927 12.06575,6.91471l6.18685,5.06706l13.77344,-4.73112l4.91308,8.49642l-11.00195,9.57422l1.25976,7.88054v0.014c0.43823,2.68706 0.62989,4.94121 0.62989,6.9567c0,2.0155 -0.19164,4.26931 -0.62989,6.9567l-1.27376,7.88053l11.00195,9.57422l-4.91309,8.51042l-13.75944,-4.74511l-6.20084,5.08105c-3.51245,2.88544 -7.54633,5.21665 -12.05175,6.91472h-0.014l-7.4746,2.82747l-2.78548,14.33333h-9.81218l-2.78548,-14.33333l-7.47461,-2.82747c-4.50544,-1.69806 -8.5533,-4.02927 -12.06575,-6.91472l-6.18685,-5.06706l-13.77344,4.73112l-4.91309,-8.49642l11.01595,-9.58822l-1.27376,-7.85254v-0.014c-0.43195,-2.69874 -0.62988,-4.95921 -0.62988,-6.9707c0,-2.0155 0.19165,-4.26931 0.62988,-6.9567l1.27376,-7.88053l-11.01595,-9.57422l4.91309,-8.51042l13.77344,4.74512l6.18685,-5.08105c3.51245,-2.88545 7.56032,-5.21665 12.06575,-6.91471l7.47461,-2.82747zM86,57.33333c-15.74175,0 -28.66667,12.92492 -28.66667,28.66667c0,15.74175 12.92492,28.66667 28.66667,28.66667c15.74175,0 28.66667,-12.92492 28.66667,-28.66667c0,-15.74175 -12.92492,-28.66667 -28.66667,-28.66667zM86,71.66667c7.96559,0 14.33333,6.36775 14.33333,14.33333c0,7.96559 -6.36775,14.33333 -14.33333,14.33333c-7.96559,0 -14.33333,-6.36775 -14.33333,-14.33333c0,-7.96559 6.36775,-14.33333 14.33333,-14.33333z"></path></g></g></svg>
+                            <span>Setting</span>  
+                        </a> 
+                        <a  id="icons1" class="nav-link">
+                            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                                 width="24" height="24"
+                                 viewBox="0 0 172 172"
+                                 style=" fill:#000000;position:relative;left:-7px; margin-left:15px;"><g transform="translate(25.8,25.8) scale(0.7,0.7)"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none" stroke="none"></path><g fill="#646464" stroke="none"><path d="M21.5,21.5v7.16667v71.66667v50.16667h14.33333v-50.16667h52.91015l7.16667,14.33333h54.58985v-78.83333h-45.74349l-7.16667,-14.33333zM35.83333,35.83333h52.91015l7.16667,14.33333h4.42318h35.83333v50.16667h-31.41015l-7.16667,-14.33333h-61.75651z"></path></g></g></g></svg>
+                            <span>Report</span> 
+                        </a>  
+                        <a id="icons1" class="nav-link"> 
+                            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                                 width="24" height="24"
+                                 viewBox="0 0 172 172"
+                                 style=" fill:#000000;position:relative;left:-7px; margin-left:15px;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#646464"><path d="M86,14.33333c-39.49552,0 -71.66667,32.17115 -71.66667,71.66667c0,39.49552 32.17115,71.66667 71.66667,71.66667c39.49552,0 71.66667,-32.17115 71.66667,-71.66667c0,-39.49552 -32.17115,-71.66667 -71.66667,-71.66667zM86,28.66667c31.74921,0 57.33333,25.58412 57.33333,57.33333c0,31.74921 -25.58412,57.33333 -57.33333,57.33333c-31.74921,0 -57.33333,-25.58412 -57.33333,-57.33333c0,-31.74921 25.58412,-57.33333 57.33333,-57.33333zM86,43c-15.83833,0 -28.66667,12.82833 -28.66667,28.66667h14.33333c0,-7.88333 6.45,-14.33333 14.33333,-14.33333c7.88333,0 14.33333,6.45 14.33333,14.33333c0,14.33333 -21.5,16.9635 -21.5,35.83333h14.33333c0,-11.83217 21.5,-17.91667 21.5,-35.83333c0,-15.83833 -12.82833,-28.66667 -28.66667,-28.66667zM78.83333,114.66667v14.33333h14.33333v-14.33333z"></path></g></g></svg>
+                            <span>Help</span>  
+                        </a>   
+                        <a id="icons1" class="nav-link"> 
+                            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                                 width="24" height="24"
+                                 viewBox="0 0 172 172"
+                                 style=" fill:#000000;position:relative;left:-7px; margin-left:15px;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#646464"><path d="M78.83333,14.33333v7.16667h-35.83333c-7.90483,0 -14.33333,6.4285 -14.33333,14.33333v107.5c0,7.90483 6.4285,14.33333 14.33333,14.33333h86c7.90483,0 14.33333,-6.4285 14.33333,-14.33333v-107.5c0,-7.90483 -6.4285,-14.33333 -14.33333,-14.33333h-35.83333v-7.16667zM43,35.83333h35.83333v7.16667h14.33333v-7.16667h35.83333v107.5l-86,0.014zM78.83333,57.33333v43h14.33333v-43zM78.83333,114.66667v14.33333h14.33333v-14.33333z"></path></g></g></svg>
+                            <span>Send Notes</span>  
+                        </a>  
+                        <hr> 
+                        <div class="text">
+                            <span class="right">About Press Copyright Contact UsContent Creators Advertising Developers</span><br>
+                            <span class="privacy">Terms Privacy Policy and Security How <b>YouTube</b> works Try new features</span>
+                        </div><br>
+                        <span class="copy">&copy 2022 Google LLC</span>
+                        </div>  
+                    </span>
+                </nav>
+            </aside>  
+            <!-- End Side Bar --> 
+            <!-- Start Content --> 
+            <div class="content">
+                <div class="fields">
+                    <a class="active" href=""> All Content</a>
+                    <a id="over7" href="">FootBall</a> 
+                    <a id="over6" href="">Music</a> 
+                    <a id="over5" href="">Rap</a> 
+                    <a id="over4" href="">Cartoons</a> 
+                    <a id="over3" href="">fitness</a> 
+                    <a id="over2" href="">Action and adventure games</a> 
+                    <a id="over1" href="">cooking</a> 
+                    <a id="over" href="">Recently uploaded channels</a>
+                    <a id="over" href="">formations</a> 
+                    <a  id="over8" href="">Pets</a> 
+                    <!-- <a href="">Live</a>  -->      
+                </div>
+                <section> 
+                    <div class="videos">
+                        <!-- a video starts -->
+                        <div  class="video">
+                            <div class="thumbnail">
+                                <img src="./Imags/Cover.png" alt="" />
+                            </div>
+                            <div class="details">
+                                <div class="author">
+                                    <img src="./Imags/channels4_profile.jpg" alt="" />
+                                </div>
+                                <div class="title">
+                                    <h3>
+                                        How To Fix PowerPoint cannot read a PPT file. 
+                                    </h3>
+                                    <a href="https://www.youtube.com/channel/UCS31oNAeiHkYeVWc-O5wYtg" target="_blank">
+                                        Software
+                                    </a>
+                                    <span> 2M Views • 3 Months Ago </span>
+                                </div>
+                            </div>  
+                        </div> 
+                        <!-- a video Ends --> 
+                        <!-- a video starts -->
+                        <div class="video">
+                            <div class="thumbnail">
+                                <img src="./Imags/Before.jpg" alt="" />
+                            </div>
+                            <div class="details">
+                                <div class="author">
+                                    <img src="./Imags/channels4_profile.jpg" alt="" />
+                                </div>
+                                <div class="title">
+                                    <h3>
+                                        How to Remove Repositry from github.
+                                    </h3>
+                                    <a href="https://www.youtube.com/channel/UCS31oNAeiHkYeVWc-O5wYtg" target="_blank">
+                                        Software
+                                    </a>
+                                    <span> 2M Views • 3 Months Ago </span>
+                                </div>
+                            </div>  
+                        </div> 
+                        <!-- a video Ends --> 
+                        <!-- a video starts -->
+                        <div  class="video">
+                            <div class="thumbnail">
+                                <img src="./Imags/forms.jpg" alt="" />
+                            </div>
+                            <div class="details">
+                                <div class="author">
+                                    <img src="./Imags/channels4_profile.jpg" alt="" />
+                                </div>
+                                <div class="title">
+                                    <h3>
+                                        How to create Log in & Sign up Form
+                                    </h3>
+                                    <a href="https://www.youtube.com/channel/UCS31oNAeiHkYeVWc-O5wYtg" target="_blank">
+                                        SoftWare
+                                    </a>
+                                    <span> 2M Views • 3 Months Ago </span>
+                                </div>
+                            </div>  
+                        </div> 
+                        <!-- a video Ends --> 
+                        <!-- a video starts -->
+                        <div class="video">
+                            <div class="thumbnail">
+                                <img src="./Imags/أشكال Css.png" alt="" />
+                            </div>
+                            <div class="details">
+                                <div class="author">
+                                    <img src="./Imags/channels4_profile.jpg" alt="" />
+                                </div>
+                                <div class="title">
+                                    <h3>
+                                        How to draw shapes with CSS code
+                                    </h3>
+                                    <a href="https://www.youtube.com/channel/UCS31oNAeiHkYeVWc-O5wYtg" target="_blank">
+                                        Software
+                                    </a>
+                                    <span> 2M Views • 3 Months Ago </span>
+                                </div>
+                            </div>  
+                        </div> 
+                        <!-- a video Ends --> 
+                        <!-- a video starts -->
+                        <div  class="video">
+                            <div class="thumbnail">
+                                <img src="./Imags/تصميم بدون عنوان.jpg" alt="" />
+                            </div>
+                            <div class="details">
+                                <div class="author">
+                                    <img src="./Imags/channels4_profile.jpg" alt="" />
+                                </div>
+                                <div class="title">
+                                    <h3>
+                                        How to remove audios from videos
+                                    </h3>
+                                    <a href="https://www.youtube.com/channel/UCS31oNAeiHkYeVWc-O5wYtg" target="_blank">
+                                        Software
+                                    </a>
+                                    <span> 2M Views • 3 Months Ago </span>
+                                </div>
+                            </div>  
+                        </div> 
+                        <!-- a video Ends --> 
+                        <!-- a video starts -->
+                        <div class="video">
+                            <div class="thumbnail">
+                                <img src="./Imags/تنزيل فيديو من على اليوتيوب.png" alt="" />
+                            </div>
+                            <div class="details">
+                                <div class="author">
+                                    <img src="./Imags/channels4_profile.jpg" alt="" />
+                                </div>
+                                <div class="title">
+                                    <h3>
+                                        How to download videos from Youtube.
+                                    </h3>
+                                    <a href="https://www.youtube.com/channel/UCS31oNAeiHkYeVWc-O5wYtg" target="_blank">
+                                        Software
+                                    </a>
+                                    <span> 2M Views • 3 Months Ago </span>
+                                </div>
+                            </div>  
+                        </div> 
+                        <!-- a video Ends --> 
+                        <!-- a video starts -->
+                        <div class="video">
+                            <div class="thumbnail">
+                                <img src="./Imags/All Dead .jpg" alt="" />
+                            </div>
+                            <div class="details">
+                                <div class="author">
+                                    <img src="./Imags/channels4_profile.jpg" alt="" />
+                                </div>
+                                <div class="title">
+                                    <h3>
+                                        Pubg Mobile Game 
+                                    </h3>
+                                    <a href="https://www.youtube.com/channel/UCS31oNAeiHkYeVWc-O5wYtg" target="_blank">
+                                        Software
+                                    </a>
+                                    <span> 2M Views • 3 Months Ago </span>
+                                </div>
+                            </div>  
+                        </div> 
+                        <!-- a video Ends --> 
+                        <!-- a video starts -->
+                        <div  class="video">
+                            <div class="thumbnail">
+                                <img src="./Imags/Before.jpg" alt="" />
+                            </div>
+                            <div class="details">
+                                <div class="author">
+                                    <img src="./Imags/channels4_profile.jpg" alt="" />
+                                </div>
+                                <div class="title">
+                                    <h3>
+                                        How to Remove Repositry from github.
+                                    </h3>
+                                    <a href="https://www.youtube.com/channel/UCS31oNAeiHkYeVWc-O5wYtg" target="_blank">
+                                        Software
+                                    </a>
+                                    <span> 2M Views • 3 Months Ago </span>
+                                </div>
+                            </div>  
+                        </div> 
+                        <!-- a video Ends --> 
+                        <!-- a video starts -->
+                        <div  class="video">
+                            <div class="thumbnail">
+                                <img src="./Imags/Cover.png" alt="" />
+                            </div>
+                            <div class="details">
+                                <div class="author">
+                                    <img src="./Imags/channels4_profile.jpg" alt="" />
+                                </div>
+                                <div class="title">
+                                    <h3>
+                                        How To Fix PowerPoint cannot read a PPT file. 
+                                    </h3>
+                                    <a href="https://www.youtube.com/channel/UCS31oNAeiHkYeVWc-O5wYtg" target="_blank">
+                                        Software
+                                    </a>
+                                    <span> 2M Views • 3 Months Ago </span>
+                                </div>
+                            </div>  
+                        </div> 
+                        <!-- a video Ends --> 
+                    </div>
+                </section>  
+            </div>
+            <!-- End Content -->  
+        </main> 
+        <div class="bar"> 
+            <div class="container">
+                <a class="nav-link active">
+                    <i class="material-icons">home</i>
+                    <span>Home</span>
+                </a> 
+                <a class="nav-link">
+                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                         width="24" height="24"
+                         viewBox="0 0 172 172"
+                         style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#646464"><path d="M86,14.33333c-39.5815,0 -71.66667,32.08517 -71.66667,71.66667c0,39.5815 32.08517,71.66667 71.66667,71.66667c39.5815,0 71.66667,-32.08517 71.66667,-71.66667c0,-39.5815 -32.08517,-71.66667 -71.66667,-71.66667zM86,28.66667c31.66233,0 57.33333,25.671 57.33333,57.33333c0,31.66233 -25.671,57.33333 -57.33333,57.33333c-31.66233,0 -57.33333,-25.671 -57.33333,-57.33333c0,-31.66233 25.671,-57.33333 57.33333,-57.33333zM121.83333,50.16667l-48.9069,22.75976l-22.75976,48.9069l48.9069,-22.75976zM86,78.11947c4.37167,0 7.88053,3.50886 7.88053,7.88053c0,4.37167 -3.50886,7.88053 -7.88053,7.88053c-4.37167,0 -7.88053,-3.50886 -7.88053,-7.88053c0,-4.37167 3.50886,-7.88053 7.88053,-7.88053z"></path></g></g></svg>
+                    <span>Trending</span>
+                </a> 
+                <i id="plus" class="fa fa-plus-circle"></i>
+                <a class="nav-link">
+                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                         width="24" height="24"
+                         viewBox="0 0 172 172"
+                         style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#646464"><path d="M50.16667,21.5c-7.91917,0 -14.33333,6.41417 -14.33333,14.33333h100.33333c0,-7.91917 -6.41417,-14.33333 -14.33333,-14.33333zM28.66667,50.16667c-7.91917,0 -14.33333,6.41417 -14.33333,14.33333v71.66667c0,7.91917 6.41417,14.33333 14.33333,14.33333h114.66667c7.91917,0 14.33333,-6.41417 14.33333,-14.33333v-71.66667c0,-7.91917 -6.41417,-14.33333 -14.33333,-14.33333zM28.66667,64.5h114.66667v71.66667h-114.66667zM71.66667,78.83333v43l35.83333,-21.5z"></path></g></g></svg>
+                    <span>Subscriptions</span>
+                </a> 
+                <a class="nav-link">
+                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                         width="24" height="24"
+                         viewBox="0 0 172 172"
+                         style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#646464"><path d="M21.5,21.5c-7.83362,0 -14.33333,6.49972 -14.33333,14.33333v71.66667c0,7.83362 6.49972,14.33333 14.33333,14.33333h93.16667c7.83362,0 14.33333,-6.49972 14.33333,-14.33333v-71.66667c0,-7.83362 -6.49972,-14.33333 -14.33333,-14.33333zM21.5,35.83333h93.16667v71.66667h-93.16667zM50.16667,50.16667v43l35.83333,-21.5zM143.33333,50.16667v86h-107.5v14.33333h107.5c7.83362,0 14.33333,-6.49972 14.33333,-14.33333v-86z"></path></g></g></svg>
+                    <span>Library</span>
+                </a> 
+            </div> 
+        </div>
+        <!-- Start Footer -->  
+        <footer></footer>
+        <!-- End Footer -->  
+    </body>
+</html>
+<script src="JS/main.js"></script>
