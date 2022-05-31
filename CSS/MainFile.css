@@ -59,7 +59,7 @@ a{
         position: fixed;
         top:673px;
         z-index: 200;
-        width: 100%;
+        width: 82%;
         gap: 2px;
     }
     .bar .container a {
